@@ -13,6 +13,10 @@
       "name": "About"
     },
     {
+      "name": "Test",
+      "src": "test.html"
+    },
+    {
       "name": "Demos",
       "children": [
         {

@@ -2,5 +2,7 @@
 .vscode/
 .dev/
 node_modules/
+webcardinal/
+themes/
 
 latest-change-set.txt
