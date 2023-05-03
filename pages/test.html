@@ -1,17 +1,20 @@
 <webc-container controller="FormController">
-    <div style="display: flex; flex-direction: row;">
-        <div>
+    <div class="container">
+        <div style="display: flex; flex-direction: row;">
+            <link rel="stylesheet" type="text/css" href="../assets/css/test.css" />
             <div>
-                <label>{{ @todo.description }}</label>
-                <input data-view-model="@todo">
-            </div>
+                <div>
+                    <label>{{ @todo.description }}</label>
+                    <input data-view-model="@todo">
+                </div><br>
 
-            <div>
-                <label>{{ @days.description }}</label>
-                <input data-view-model="@days"></input>
-            </div>
+                <div>
+                    <label>{{ @days.description }}</label>
+                    <input data-view-model="@days"></input>
+                </div>
 
-            <button data-tag="submit">Submit</button>
+                <button data-tag="submit">Submit</button>
+            </div>
         </div>
     </div>
 </webc-container>

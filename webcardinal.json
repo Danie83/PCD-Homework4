@@ -17,6 +17,11 @@
       "src": "test.html"
     },
     {
+      "name": "View",
+      "src": "view.html"
+    },
+    
+    {
       "name": "Demos",
       "children": [
         {
