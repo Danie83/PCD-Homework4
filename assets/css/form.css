@@ -1,0 +1,40 @@
+.form-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -60%);
+    width: 50%;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form-fields {
+    width: 100%;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form-field {
+    margin-bottom: 20px;
+}
+
+.form-field input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-button {
+    text-align: center;
+}
+
+.form-message span {
+    color: red;
+}
