@@ -1,27 +1,20 @@
 <webc-container controller="ViewController" enable-translations>
-    <div style="display: flex; flex-direction: row;">
-      <link rel="stylesheet" type="text/css" href="../assets/css/view.css" />
-      <h4 data-view-model="@title" class="article"></h4>
+    <div style="display: flex; flex-direction: row">
+        <link rel="stylesheet" type="text/css" href="../assets/css/view.css" />
+        <h4 data-view-model="@title" class="article"></h4>
         <div data-for="@task_list">
-
-
-        <psk-layout template-columns="auto auto 1fr" gap="20px">
-          <article class="article">
-            <div class="card">
-            <img src="assets/favicon/favicon.png" alt="Avatar">
-            <h4 data-view-model="@tasks" class="article"></h4>
-            <!-- <p data-view-model="@duration" class="article"></p> -->
-            <!-- <input type="button" value="@buttonText" />
-            <span>{{ @spanText }}</span> -->
-            <div>
-              <psk-button data-tag="edit" button-class="btn btn-success">Edit</psk-button>
-              <psk-button data-tag="remove" button-class="btn btn-danger">Remove</psk-button>
-            </div>
-            </div>
-        </article>
-        
-        </psk-layout>
-      </div>
-  </div>
-  </webc-container>
-  
+            <psk-layout template-columns="auto auto 1fr" gap="20px">
+                <article class="article">
+                    <div class="card">
+                        <h4 class="article">{{@task}}</h4>
+                        <p class="article">{{@duration}}</p>
+                        <div>
+                            <psk-button data-tag="edit" button-class="btn btn-success">Edit</psk-button>
+                            <psk-button data-tag="remove" button-class="btn btn-danger">Remove</psk-button>
+                        </div>
+                    </div>
+                </article>
+            </psk-layout>
+        </div>
+    </div>
+</webc-container>

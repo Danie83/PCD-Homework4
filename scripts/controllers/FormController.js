@@ -8,7 +8,7 @@ const model = {
     days: {
         description: "Days for completion:",
         placeholder: "Add deadline day..."
-    },
+    }
 };
 
 var items = []
@@ -29,18 +29,5 @@ export default class FormController extends WebcController {
             console.log(items);
             
         });
-    }
-    async onReady() {
-        this.interval = setInterval((_) => {
-            this.model.input.value++;
-        }, 2000);
-
-        this.onTagClick("set-language", (model, event) => {
-            this.setLanguage(model.language);
-        });
-    }
-
-    onDisconnectedCallback() {
-        clearInterval(this.interval);
     }
 }
