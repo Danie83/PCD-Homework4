@@ -1,46 +1,16 @@
 {
   "pagesPathname": "pages",
   "pagesFallback": {
-    "name": "Home"
+    "name": "Form"
   },
   "pages": [
-    {
-      "path": "/",
-      "name": "Homepage",
-      "src": "home.html"
-    },
-    {
-      "name": "About"
-    },
     {
       "name": "Form",
       "src": "form.html"
     },
     {
-      "name": "Demos",
-      "children": [
-        {
-          "name": "data-if"
-        },
-        {
-          "name": "data-for"
-        },
-        {
-          "name": "webc-container"
-        },
-        {
-          "name": "webc-skin"
-        }
-      ]
-    },
-    {
-      "name": "Contact",
-      "tag": "contact"
-    },
-    {
-      "name": "PSK Styles",
-      "tag": "faq",
-      "src": "https://privatesky.xyz/pages/faq.html"
+      "name": "View",
+      "src": "view.html"
     }
   ],
   "theme": "clear-sky-theme"

@@ -1,9 +1,9 @@
 const { WebcController } = WebCardinal.controllers;
 
 const model = {
-    todo: {
+    task: {
         description: "Task:",
-        placeholder: "Add todo...",
+        placeholder: "Add task...",
     },
     days: {
         description: "Days for completion:",
@@ -12,20 +12,26 @@ const model = {
     formMessage: false,
 };
 
-var items = []
+if (!localStorage.getItem('itemData'))
+{
+    let items = [];
+    localStorage.setItem('itemData', JSON.stringify(items))
+}
 
 export default class FormController extends WebcController {
     constructor(element, history) {
         super(element, history);
         this.setModel(JSON.parse(JSON.stringify(model)));
+        
+        var items = JSON.parse(localStorage.getItem('itemData'));
 
         this.onTagClick("submit", () => {
-            const todoData = this.model.toObject("todo");
+            const taskData = this.model.toObject("task");
             const daysData = this.model.toObject("days");
 
-            if (todoData.value == undefined || 
+            if (taskData.value == undefined || 
                 daysData.value == undefined ||
-                todoData.value.length == 0 ||
+                taskData.value.length == 0 ||
                 daysData.value.length == 0)
             {
                 if (!this.model.formMessage)
@@ -43,12 +49,14 @@ export default class FormController extends WebcController {
             }
 
             let info = {
-                todo: todoData.value,
-                days: daysData.value
+                task: taskData.value,
+                days: daysData.value,
+                complete: false
             };
 
             items.push(info);
-            console.log(items);
+            localStorage.setItem('itemData', JSON.stringify(items))
+            console.log(items)
         });
     }
 }
