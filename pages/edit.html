@@ -1,4 +1,4 @@
-<webc-container controller="FormController">
+<webc-container controller="EditController">
     <link rel="stylesheet" type="text/css" href="../assets/css/form.css"/>
     <div class="form-container">
         <div class="form-fields">
@@ -12,7 +12,7 @@
                 <input data-view-model="@days"></input>
             </div>
             <div class="form-button">
-                <psk-button data-tag="submit" button-class="btn btn-success">Submit</psk-button>
+                <psk-button data-tag="update" button-class="btn btn-success">Update</psk-button>
             </div>
             <div class="form-message" data-if="@formMessage">
                 <span>Current form is incorrect.</span>

@@ -11,6 +11,10 @@
     {
       "name": "View",
       "src": "view.html"
+    },
+    {
+      "name": "Edit",
+      "src": "edit.html"
     }
   ],
   "theme": "clear-sky-theme"

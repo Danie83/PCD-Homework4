@@ -17,23 +17,6 @@ export default class ViewController extends WebcController {
 
         this.model = JSON.parse(JSON.stringify(model));
 
-        Array.from(Array(items.length)).forEach((_, idx) => {
-            this.model.addExpression(
-                `task_list.${idx}.formattedInputValue`,
-                () => {
-                    return `Current value is: ${this.model.input.value * idx + 1}`;
-                },
-                "input.value"
-            );
-            this.model.addExpression(
-                `task_list.${idx}.formattedClass`,
-                () => {
-                    return `class-${this.model.input.value * idx + 1}`;
-                },
-                "input.value"
-            );
-        });
-
         this.onTagClick("remove", (model) => {
             items = items.filter(item => item.id !== model.id);
             localStorage.setItem('itemData', JSON.stringify(items));
@@ -48,5 +31,11 @@ export default class ViewController extends WebcController {
     
             this.model = JSON.parse(JSON.stringify(model));
         });
+
+        this.onTagClick("edit", (model) => {
+            this.navigateToUrl("/edit");
+            let currentObj = items.find(item => item.id === model.id);
+            localStorage.setItem('currentItem', JSON.stringify(currentObj));
+        })
     }
 }
