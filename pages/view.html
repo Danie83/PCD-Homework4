@@ -1,20 +1,23 @@
 <webc-container controller="ViewController" enable-translations>
-    <div style="display: flex; flex-direction: row">
-        <link rel="stylesheet" type="text/css" href="../assets/css/view.css" />
-        <h4 data-view-model="@title" class="article"></h4>
-        <div data-for="@task_list">
-            <psk-layout template-columns="auto auto 1fr" gap="20px">
-                <article class="article">
-                    <div class="card">
-                        <h4 class="article">{{@task}}</h4>
-                        <p class="article">{{@duration}}</p>
-                        <div>
-                            <psk-button data-tag="edit" button-class="btn btn-success">Edit</psk-button>
-                            <psk-button data-tag="remove" button-class="btn btn-danger">Remove</psk-button>
-                        </div>
-                    </div>
-                </article>
-            </psk-layout>
+    <link rel="stylesheet" type="text/css" href="../assets/css/view.css" />
+    <h4 data-view-model="@title" class="article"></h4>
+    <psk-layout data-for="@task_list" template-columns="auto auto" align-items="center">
+        <psk-style>
+            :host { height: 150px; border: 2px solid #BBB }
+            ::slotted(h4) { padding: 0.5em; color: #FFF; background: #666 }
+        </psk-style>
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Task</h4>
+                <p class="card-subtitle">Duration: {{@days}}</p>
+            </div>
+            <div class="card-body">
+                <p>{{@task}}</p>
+            </div>
+            <div class="card-footer">
+                <psk-button data-tag="edit" button-class="btn btn-success">Edit</psk-button>
+                <psk-button data-tag="remove" button-class="btn btn-danger">Remove</psk-button>
+            </div>
         </div>
-    </div>
+    </psk-layout>
 </webc-container>

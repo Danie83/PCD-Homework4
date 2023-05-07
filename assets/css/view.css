@@ -1,23 +1,63 @@
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    width: 300px;
-    background-color: #5675D3;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 350px;
+    margin-top: 20px;
+}
+
+.card-header {
+    background-color: #007bff;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.card-subtitle {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    border-radius: 10px 10px 10px 10px;
-    
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.container {
-    padding: 2px 16px;
-}
-
-img {
-    border-radius: 5px 5px 0 0;
-    width: 40%;
-    
-}
+    padding: 1rem;
+  }
+  
+  .card-footer button {
+    border-radius: 3px;
+    color: #fff;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 100px;
+  }
+  
+  .card-footer button:hover {
+    opacity: 0.8;
+  }
+  
+  .card-footer .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  .card-footer .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  

@@ -49,6 +49,7 @@ export default class FormController extends WebcController {
             }
 
             let info = {
+                id : items.length + 1,
                 task: taskData.value,
                 days: daysData.value,
                 complete: false

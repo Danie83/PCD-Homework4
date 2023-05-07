@@ -1,13 +1,10 @@
 const { WebcController } = WebCardinal.controllers;
 
-var items = [];
-var control = true;
-
 export default class ViewController extends WebcController {
     constructor(element, history) {
         super(element, history);
 
-        this.loadJsonData();
+        var items = JSON.parse(localStorage.getItem('itemData'));
 
         var model = {
             input: {
@@ -36,23 +33,20 @@ export default class ViewController extends WebcController {
                 "input.value"
             );
         });
-    }
 
-    loadJsonData = () => {
-        if (control)
-        {
-            const xhr = new XMLHttpRequest();
-            xhr.open("GET", "scripts/controllers/date.json", true);
-            xhr.onreadystatechange = () => {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    const jsonData = JSON.parse(xhr.responseText);
-                    for (var i = 0; i < jsonData.length; i++) {
-                        items.push(jsonData[i])
-                    }
-                }
+        this.onTagClick("remove", (model) => {
+            items = items.filter(item => item.id !== model.id);
+            localStorage.setItem('itemData', JSON.stringify(items));
+            var model = {
+                input: {
+                    type: "text",
+                    value: "0",
+                    style: "border: 1px solid #333",
+                },
+                task_list: items,
             };
-            xhr.send();
-            control = false;
-        }
-    };
+    
+            this.model = JSON.parse(JSON.stringify(model));
+        });
+    }
 }
