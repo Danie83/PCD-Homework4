@@ -1,0 +1,22 @@
+<webc-container controller="FormController">
+    <link rel="stylesheet" type="text/css" href="../assets/css/form.css"/>
+    <div class="form-container">
+        <div class="fornm-fields">
+            <div class="form-field">
+                <label>{{ @task.description }}</label>
+                <input data-view-model="@task">
+            </div>
+
+            <div class="form-field">
+                <label>{{ @days.description }}</label>
+                <input data-view-model="@days"></input>
+            </div>
+            <div class="form-button">
+                <psk-button data-tag="submit" button-class="btn btn-success">Submit</psk-button>
+            </div>
+            <div class="form-message" data-if="@formMessage">
+                <span>Current form is incorrect.</span>
+            </div>
+        </div>
+    </div>
+</webc-container>
