@@ -6,7 +6,7 @@
             :host { height: 150px; border: 2px solid #BBB }
             ::slotted(h4) { padding: 0.5em; color: #FFF; background: #666 }
         </psk-style>
-        <div class="card">
+        <div data-if="@task" class="card">
             <div class="card-header">
                 <h4 class="card-title">Task</h4>
                 <p class="card-subtitle">Duration: {{@days}}</p>
